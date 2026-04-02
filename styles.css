@@ -1,0 +1,417 @@
+/* ===================== */
+/* RESET */
+/* ===================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== */
+/* VARIABLES */
+/* ===================== */
+
+:root {
+    --vert-fonce: #2F6364;
+    --beige-clair: #FAF3E3;
+    --beige: #F5E6C8;
+    --texte: #2E2E2E;
+    --blanc: #ffffff;
+    --accent: #7B1B1C;
+}
+
+/* ===================== */
+/* BASE */
+/* ===================== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--beige-clair);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
+nav {
+    background: var(--blanc);
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texte);
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--vert-fonce);
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-family: 'Lusitana', serif;
+    font-size: 3rem;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 12px 25px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ===================== */
+/* CONTAINER */
+/* ===================== */
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--vert-fonce);
+}
+
+/* ===================== */
+/* A PROPOS */
+/* ===================== */
+
+.about-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-left {
+    max-width: 500px;
+}
+
+.about-left h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-right img {
+    width: 250px;
+    border-radius: 10px;
+    margin-top: 80px;
+}
+
+/* ===================== */
+/* COMPÉTENCES */
+/* ===================== */
+
+.hero-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-title h1 {
+    font-family: 'Lusitana', serif;
+    font-size: 2rem;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.hero-title h1:first-child {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background: var(--blanc);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+}
+
+.skill-card h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    font-size: 0.9rem;
+}
+
+/* ===================== */
+/* STAGE */
+/* ===================== */
+
+#stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#stage h2 {
+    width: 500px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.col-2 {
+    display: flex;
+    gap: 40px;
+}
+
+.stage-image {
+    width: 250px;
+    border-radius: 10px;
+}
+
+/* ===================== */
+/* PROJETS */
+/* ===================== */
+
+#projets {
+    max-width: 1400px;
+    margin: auto;
+    padding: 60px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    gap: 30px;
+}
+
+/* titre */
+#projets h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+/* cartes */
+.card {
+    position: relative;
+    text-align: center;
+}
+
+/* carré projet */
+.project-link {
+    display: block;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* contenu */
+.project-link img,
+.project-link video,
+.project-link embed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* overlay */
+.project-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+/* titre sur image */
+.card h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    z-index: 2;
+}
+
+/* hover */
+.project-link:hover img,
+.project-link:hover video {
+    transform: scale(1.08);
+}
+
+/* ===================== */
+/* MODALE */
+/* ===================== */
+
+.modal-container {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modal-container:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    max-width: 900px;
+    width: 90%;
+    border-radius: 12px;
+    position: relative;
+}
+
+.modal-body {
+    display: flex;
+    gap: 40px;
+}
+
+.modal-body img,
+.modal-body video,
+.modal-body embed {
+    width: 50%;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+/* ===================== */
+/* CONTACT */
+/* ===================== */
+
+.card-contact-large {
+    background: var(--vert-fonce);
+    color: var(--beige);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+/* 🔥 NOM EN BEIGE */
+.card-contact-large h2 {
+    color: var(--beige);
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 1000px) {
+    #projets {
+        grid-template-columns: repeat(2, 300px);
+    }
+}
+
+@media (max-width: 600px) {
+    #projets {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container,
+    .col-2,
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-body img,
+    .modal-body video,
+    .modal-body embed {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+.card-avenir {
+    max-width: 700px;
+    margin: 60px auto; /* centre le bloc */
+    padding: 40px;
+
+    background: var(--blanc);
+    border: 2px solid var(--accent); /* cadre */
+    border-radius: 15px;
+
+    text-align: center; /* centre le texte */
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+
